@@ -23,6 +23,8 @@ class QuotesSpider(scrapy.Spider):
             'extendedAddress': response.css('span.extended-address::text').extract_first(),
             'locality': response.css('span.locality::text').extract_first(),
             'nearbyPlaces': response.css('div.poiName::text').extract(),
+            'reviewType': response.css('span.row_label.row_cell::text').extract(),
+            'reviewAmount': response.css('span.row_count.row_cell::text').extract(),
 
         }
 
